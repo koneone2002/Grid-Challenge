@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* body {
+  background: black;
+} */
+body,
+button,
+input {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+}
+body {
+  display: grid;
+  grid-template-columns: 220px 1fr 336px;
+  grid-gap: 25px;
+  height: 100vh;
+}
+h2 {
+  color: #54586d;
+  font-size: 1.6rem;
+}
+h3 {
+  color: #52566b;
+  font-size: 1.2rem;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  color: #3a3f56;
+  text-decoration: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sidebar {
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #333950;
+  color: #fff;
+  padding: 35px;
+}
+
+.sidebar .logo {
+  align-self: flex-start;
+  margin-bottom: 40px;
+}
+.sidebar nav {
+  border-bottom: 1px solid #777b8f;
+}
+.sidebar .nav-item {
+  display: flex;
+  color: #777b8f;
+  align-items: center;
+  font-size: 16px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.sidebar .nav-item img {
+  height: 20px;
+  margin-right: 25px;
+  align-content: center;
+}
+
+.sidebar .nav-item:last-child {
+  margin-bottom: 50px;
+}
+
+.utils {
+  background: #f5f6fb;
+}
+.sidebar .actions {
+  margin-top: auto;
+  margin-bottom: 30px;
+  background-color: #464b61;
+  color: #8f93a0;
+  border-radius: 15px;
+  padding: 20px 10px 20px 10px;
+  font-size: 14px;
+}
+.sidebar .actions > div {
+  align-items: center;
+  line-height: 30px;
+}
+
+.actions-item {
+  display: flex;
+}
+.sidebar .actions .actions-item img {
+  height: 18px;
+  filter: invert(50%) sepia(19%) saturate(325%) hue-rotate(193deg)
+    brightness(92%) contrast(88%);
+  margin-right: 9px;
+  align-items: center;
+}
+.sidebar .nav-item.active {
+  color: #fff;
+}
+
+.sidebar .nav-item.active::before {
+  content: '';
+  height: 100%;
+  width: 5px;
+  background-color: #fff;
+  position: absolute;
+  left: -37px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.sidebar .nav-item.active img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(82deg) brightness(105%)
+    contrast(105%);
+}
+button.btn {
+  background-color: #ffa000;
+  border: none;
+  font-size: 13px;
+  padding: 8px;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+button.btn::after {
+  content: '+';
+  background: #ffb333;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn .text {
+  flex: 1;
+}
+.content {
+  background: #c3c6dd;
+  padding: 20px;
+}
+.content section {
+  margin-bottom: 30px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  padding-top: 12px;
+  padding-left: 35px;
+  border: none;
+  border-radius: 8px;
+  background-image: url(images/search.svg);
+  background-repeat: no-repeat;
+  background-position: 7px 7px;
+}
+
+/* .search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-box img {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 10px;
+} */
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  opacity: 0.6;
+}
+.projects {
+  display: flex;
+  justify-content: center;
+  
+}
+.project {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 60px 2rem 2rem;
+  grid-template-columns: 100px 70px;
+  grid-template-areas:
+    'folder participants'
+    'title title'
+    'date date';
+
+  background: #fff;
+  margin-right: 15px;
+  padding: 15px;
+  border-radius: 20px;
+}
+.project-participants img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.project-participants li {
+  display: inline-block;
+  margin-left: -10px;
+}
+.project-participants li.more-participants {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: -9px;
+  border: 1px solid #d0d1d7;
+}
+.project-actions {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  border: none;
+  background: transparent;
+  opacity: 0.6;
+}
+.project-icon {
+  grid-area: folder;
+}
+.project-participants {
+  grid-area: participants;
+}
+.project-title {
+  grid-area: title;
+  align-self: center;
+}
+.project .created-date {
+  grid-area: date;
+  align-self: center;
+  color: #949bc0;
+}
+
+.stats {
+  background: #f5f6fb;
+}
